@@ -11,7 +11,9 @@ docker build -f <%=@dockerFile %> -t <%=@siteImage %> .
 
 mkdir -p <%=@shareFolder %>
 
-echo "{\"onDemandCallbackHost\": \"<%=@onDemandCallbackHost%>/app\", \"mainIP\": \"<%=@mainIP%>\" , \"superPowerServer\": \"<%=@superPowerServer%>\"}" > <%=@shareFolder %>/onDemandSetting.json
+echo "{\"onDemandCallbackHost\"\n: \"<%=@onDemandCallbackHost%>/app\"\n, \&
+\"mainIP\": \"<%=@mainIP%>\"\n , \"superPowerServer\": \"<%=@superPowerServer%>\"\n}" \& 
+> <%=@shareFolder %>/onDemandSetting.json
 
 docker run -d --restart=on-failure --env mainIP="<%=@mainIP %>" --env onDemandCallbackHost="<%=@onDemandCallbackHost %>" --env superPowerServer="<%=@superPowerServer  %>" -v "<%=@shareFolder %>":/var/_shareFolder -v "<%=@dockerCodePath%>/app":/var/_localApp -v "<%=@dockerDataPath%>":/var/_localAppData --name <%=@siteContainer %>  <%=@siteImage %> 
 
