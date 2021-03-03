@@ -1,8 +1,6 @@
 #!/bin/bash
 cd /var/_localApp
 echo $mainIP >> /var/_shareFolder/mainIP.txt
-
-
 node test.js >> /var/_shareFolder/easy_ondemand.txt
 # upload all file within /var/_shareFolder
 if [ $onDemandCallbackHost = "localhost" ]; then
