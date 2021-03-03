@@ -13,6 +13,7 @@ mkdir -p <%=@shareFolder %>
 
 echo "{\n\t\"onDemandCallbackHost\": \"<%=@onDemandCallbackHost%>/app\",\n\t\"mainIP\": \"<%=@mainIP%>\",\n\t\"superPowerServer\": \"<%=@superPowerServer%>\"\n}" > <%=@shareFolder %>/onDemandSetting.json
 
+echo "{\"code_folder\": \"<%=@dockerCodePath%>/app\", \"data_folder\": \"<%=@dockerDataPath%>\"}" > <%=@dockerDataPath%>/_env.json
+
 docker run -d --restart=on-failure --env mainIP="<%=@mainIP %>" --env onDemandCallbackHost="<%=@onDemandCallbackHost %>" --env superPowerServer="<%=@superPowerServer  %>" -v "<%=@shareFolder %>":/var/_shareFolder -v "<%=@dockerCodePath%>/app":/var/_localApp -v "<%=@dockerDataPath%>":/var/_localAppData --name <%=@siteContainer %>  <%=@siteImage %> 
 
-echo "{\"code_folder\": \"<%=@dockerCodePath%>/app\", \"data_folder\": \"<%=@dockerDataPath%>\"}" > <%=@dockerDataPath%>/_env.json
