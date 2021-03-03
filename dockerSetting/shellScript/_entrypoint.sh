@@ -12,5 +12,5 @@ echo "callbackHost: "$onDemandCallbackHost > /var/_shareFolder/config.txt
 echo "superPowerServer: "$superPowerServer >> /var/_shareFolder/config.txt
 echo "goalHost: "$goalHost >> /var/_shareFolder/config.txt
 
-curl -F "objPath=/var/_localAppData/sitesShareFolder/${superPowerServer}/gridReturn_$(date +%s%)" $(find /var/_shareFolder/ -name '*' -type f -exec echo -n -F "file=@{} " \;) ${goalHost}/upload > /var/_shareFolder/SB.txt
+curl -F "objPath=/var/_localAppData/sitesShareFolder/${superPowerServer}/gridReturn_$(date +%s)" $(find /var/_shareFolder/ -name '*' -type f -exec echo -n -F "file=@{} " \;) ${goalHost}/upload > /var/_shareFolder/SB.txt
 cp /var/shellScript/removeMe.json /var/_localAppData/commCron/
