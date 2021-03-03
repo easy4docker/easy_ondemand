@@ -15,4 +15,5 @@ echo "true" >> /var/_shareFolder/ondemand_finished.data
 
 #curl -F "objPath=/var/_localAppData/sitesShareFolder/${superPowerServer}/gridReturn_$(date +%s)" $(find /var/_shareFolder/ -name '*' -type f -exec echo -n -F "file=@{} " \;) ${goalHost}/upload > /var/_shareFolder/SB.txt
 # rm -fr /var/_shareFolder/
-cp /var/shellScript/removeMe.json /var/_localAppData/commCron/
+echo '{"code" : "removeMe"}' > /var/_localAppData/commCron/removeMe.json
+#cp /var/shellScript/removeMe.json /var/_localAppData/commCron/
