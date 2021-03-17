@@ -9,9 +9,10 @@ docker image rm -f <%=@siteImage %>
 
 docker build -f <%=@dockerFile %> -t <%=@siteImage %> .
 
-mkdir -p <%=@shareFolder %>
+mkdir -p <%=@shareFolder %>/input
+mkdir -p <%=@shareFolder %>/output
 
-echo "{\n\t\"onDemandCallbackHost\": \"<%=@onDemandCallbackHost%>\",\n\t\"mainIP\": \"<%=@mainIP%>\",\n\t\"superPowerServer\": \"<%=@superPowerServer%>\"\n}" > <%=@shareFolder %>/_dockerSetting.json
+echo "{\n\t\"onDemandCallbackHost\": \"<%=@onDemandCallbackHost%>\",\n\t\"mainIP\": \"<%=@mainIP%>\",\n\t\"superPowerServer\": \"<%=@superPowerServer%>\"\n}" > <%=@shareFolder %>/input/_dockerSetting.json
 
 echo "{\"code_folder\": \"<%=@dockerCodePath%>/app\", \"data_folder\": \"<%=@dockerDataPath%>\"}" > <%=@dockerDataPath%>/_env.json
 
