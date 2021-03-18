@@ -13,8 +13,9 @@ const fn = '/var/_sharedFolder/input/inputData.data';
 const fs = require('fs');
 fs.readFile(fn, 'utf-8', (err, data) => {
   console.log('start');
-  /*
+
   try {
+    console.log('start 2');
     const list = data.split('\n');
     console.log('start');
     for (let i =0; i < list.length; i++) {
@@ -23,7 +24,8 @@ fs.readFile(fn, 'utf-8', (err, data) => {
     console.log('end');
   } catch (e) {
     console.log(e.message);
-  }*/
+  }
+  console.log('end2');
 });
 /*
 fs.readDir
