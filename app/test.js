@@ -16,7 +16,7 @@ fs.readFile(fn, 'utf-8', (err, data) => {
 
   try {
     console.log('start 2');
-    const list = data.split("\n");
+    const list = data.split(JSON.stringify('\n'));
     console.log('start');
     for (let i =0; i < list.length; i++) {
       console.log(i + ':' + list[i]);
