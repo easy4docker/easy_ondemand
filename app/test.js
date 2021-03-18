@@ -8,11 +8,13 @@ request('http://www.google.com', function (error, response, body) {
 });
 */
 // '/var/_sharedFolder/input/inputData.data'
+const fn = '/var/_sharedFolder/input/inputData.data';
+// onst fn = ' __dirname + '/data.data'
 const fs = require('fs');
-fs.readFile('/var/_sharedFolder/input/inputData.data', (err, data) => {
-  const list = data.split("\n");
+fs.readFile(fs, 'utf-8', (err, data) => {
+  const list = data.split('\n');
   for (let i =0; i < list.length; i++) {
-    console.log(list[i]);
+    console.log(i + ':' + list[i]);
   }
 });
 /*
