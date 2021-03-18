@@ -13,9 +13,11 @@ const fn = '/var/_sharedFolder/input/inputData.data';
 const fs = require('fs');
 fs.readFile(fs, 'utf-8', (err, data) => {
   const list = data.split('\n');
+  console.log('start');
   for (let i =0; i < list.length; i++) {
     console.log(i + ':' + list[i]);
   }
+  console.log('end');
 });
 /*
 fs.readDir
