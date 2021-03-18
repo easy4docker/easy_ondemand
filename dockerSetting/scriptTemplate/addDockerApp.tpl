@@ -12,6 +12,7 @@ docker build -f <%=@dockerFile %> -t <%=@siteImage %> .
 mkdir -p <%=@shareFolder %>/input
 mkdir -p <%=@shareFolder %>/output
 chmod 777 <%=@shareFolder %>/input
+chmod 777 <%=@shareFolder %>/output
 
 mv <%=@dockerDataPath%>/commCronData/* <%=@shareFolder %>/input/
 
