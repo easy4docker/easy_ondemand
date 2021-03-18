@@ -9,9 +9,11 @@ request('http://www.google.com', function (error, response, body) {
 */
 // '/var/_sharedFolder/input/inputData.data'
 const fn = '/var/_sharedFolder/input/inputData.data';
-// onst fn = ' __dirname + '/data.data'
+// const fn = __dirname + '/data.data'
 const fs = require('fs');
 fs.readFile(fn, 'utf-8', (err, data) => {
+  console.log('start');
+  /*
   try {
     const list = data.split('\n');
     console.log('start');
@@ -21,7 +23,7 @@ fs.readFile(fn, 'utf-8', (err, data) => {
     console.log('end');
   } catch (e) {
     console.log(e.message);
-  }
+  }*/
 });
 /*
 fs.readDir
