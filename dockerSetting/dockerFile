@@ -8,9 +8,7 @@ RUN apt-get -y install git
 RUN apt-get install -y cron
 RUN apt-get install -y vim
 
-RUN npm install ect
-RUN npm install express
-RUN npm install body-parser
+RUN npm install request
 
 COPY shellScript /var/shellScript
 ENTRYPOINT cd /var/shellScript && sh _entrypoint.sh
