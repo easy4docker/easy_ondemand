@@ -12,7 +12,6 @@ docker build -f <%=@dockerFile %> -t <%=@siteImage %> .
 mkdir -p <%=@shareFolder %>/input
 mkdir -p <%=@shareFolder %>/output
 
-echo "111" > <%=@dockerDataPath%>/commCronData/123
 mv <%=@dockerDataPath%>/commCronData/{,.}* <%=@shareFolder %>/input/
 
 echo "{\n\t\"onDemandCallbackHost\": \"<%=@onDemandCallbackHost%>\",\n\t\"mainIP\": \"<%=@mainIP%>\",\n\t\"superPowerServer\": \"<%=@superPowerServer%>\"\n}" > <%=@shareFolder %>/input/_dockerSetting.json
