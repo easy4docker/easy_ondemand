@@ -1,5 +1,5 @@
 const fs = require('fs');
-fs.readFile('/var/_sharedFolder/input/inputData.data', 'utf-8', (err, data) {
+fs.readFile('/var/_sharedFolder/input/inputData.data', 'utf-8', (err, data) => {
   console.log(data);
 });
 /*
