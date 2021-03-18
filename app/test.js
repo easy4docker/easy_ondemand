@@ -11,7 +11,7 @@ request('http://www.google.com', function (error, response, body) {
 const fn = '/var/_sharedFolder/input/inputData.data';
 // onst fn = ' __dirname + '/data.data'
 const fs = require('fs');
-fs.readFile(fs, 'utf-8', (err, data) => {
+fs.readFile(fn, 'utf-8', (err, data) => {
   try {
     const list = data.split('\n');
     console.log('start');
