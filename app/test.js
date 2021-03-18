@@ -1,3 +1,9 @@
+const fs = require('fs');
+fs.readFile('/var/_sharedFolder/input/inputData.data', 'utf-8', (err, data) {
+  console.log(data);
+});
+/*
+fs.readDir
 const process = require('process');
 console.log('runing start -> ' + new Date());
 
@@ -11,3 +17,4 @@ setTimeout(
     process.exit()
   }, 60000
 );
+*/
