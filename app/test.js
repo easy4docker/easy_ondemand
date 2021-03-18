@@ -7,10 +7,12 @@ request('http://www.google.com', function (error, response, body) {
   console.log('body:', body); // Print the HTML for the Google homepage.
 });
 */
+// '/var/_sharedFolder/input/inputData.data'
+const fs = require('fs');
 fs.readFile('/var/_sharedFolder/input/inputData.data', 'utf-8', (err, data) => {
   const list = data.split("\n");
   for (let i =0; i < list.length; i++) {
-    console.log(list);
+    console.log(list[i]);
   }
 });
 /*
