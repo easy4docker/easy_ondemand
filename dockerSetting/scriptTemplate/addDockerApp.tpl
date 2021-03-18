@@ -12,6 +12,8 @@ docker build -f <%=@dockerFile %> -t <%=@siteImage %> .
 mkdir -p <%=@shareFolder %>/input
 mkdir -p <%=@shareFolder %>/output
 
+mv <%=@dockerDataPath%>/inputData.data <%=@shareFolder %>/input/inputData.data
+
 echo "{\n\t\"onDemandCallbackHost\": \"<%=@onDemandCallbackHost%>\",\n\t\"mainIP\": \"<%=@mainIP%>\",\n\t\"superPowerServer\": \"<%=@superPowerServer%>\"\n}" > <%=@shareFolder %>/input/_dockerSetting.json
 
 echo "{\"code_folder\": \"<%=@dockerCodePath%>/app\", \"data_folder\": \"<%=@dockerDataPath%>\"}" > <%=@dockerDataPath%>/_env.json
