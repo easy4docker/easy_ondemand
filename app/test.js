@@ -43,9 +43,9 @@ try {
 const process = require('process');
 console.log('runing start -> ' + new Date());
 
-setInterval(()=> {
+// setInterval(()=> {
   console.log('.. ' + new Date());
-}, 5000)
+// }, 5000)
 
 setTimeout(
   ()=> {
