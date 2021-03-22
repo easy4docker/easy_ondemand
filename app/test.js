@@ -11,6 +11,8 @@ request('http://www.google.com', function (error, response, body) {
 const fn = '/var/_sharedFolder/input/inputData.data';
 // const fn = __dirname + '/data.data'
 */
+
+/*
 try {
   
     const fs = require('fs');
@@ -35,11 +37,12 @@ try {
     console.log(eRoot.message);
   }
 
+*/
 
-/*
+
 const process = require('process');
 console.log('runing start -> ' + new Date());
-
+/*
 setInterval(()=> {
   console.log('.. ' + new Date());
 }, 5000)
