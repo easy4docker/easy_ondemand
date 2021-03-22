@@ -25,4 +25,4 @@ echo "{\"code_folder\": \"<%=@dockerCodePath%>/app\", \"data_folder\": \"<%=@doc
 
 echo  "<%=@shareFolder %>" >> <%=@shareFolder %>/mmm.txt
 
-docker run -d --restart=no -v "<%=@shareFolder %>":/var/_sharedFolder -v "<%=@dockerCodePath%>/app":/var/_localApp -v "<%=@dockerDataPath%>":/var/_localAppData --name <%=@siteContainer %>  <%=@siteImage %> 
+docker run -d --restart=on-failure -v "<%=@shareFolder %>":/var/_sharedFolder -v "<%=@dockerCodePath%>/app":/var/_localApp -v "<%=@dockerDataPath%>":/var/_localAppData --name <%=@siteContainer %>  <%=@siteImage %> 
