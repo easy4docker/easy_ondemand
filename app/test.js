@@ -51,5 +51,5 @@ setTimeout(
   ()=> {
     console.log('runing end -> ' + new Date());
   //  process.exit()
-  }, 30000
+  }, 10000
 );
