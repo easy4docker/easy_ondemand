@@ -10,6 +10,7 @@ request('http://www.google.com', function (error, response, body) {
 // '/var/_sharedFolder/input/inputData.data'
 const fn = '/var/_sharedFolder/input/inputData.data';
 // const fn = __dirname + '/data.data'
+*/
 const fs = require('fs');
 fs.readFile(fn, 'utf-8', (err, data) => {
   console.log('start');
@@ -27,11 +28,11 @@ fs.readFile(fn, 'utf-8', (err, data) => {
   }
   console.log('end2');
 });
-*/
 
+/*
 const process = require('process');
 console.log('runing start -> ' + new Date());
-/*
+
 setInterval(()=> {
   console.log('.. ' + new Date());
 }, 5000)
