@@ -1,4 +1,7 @@
 # -- Add docker app ... <%=@serverName %> --
+
+echo  "AAA" >> /tmp/mmm.txt
+
 cd <%=@dockerSettingPath %>
 
 docker container stop <%=@siteContainer %>
@@ -23,6 +26,6 @@ echo "{\"code_folder\": \"<%=@dockerCodePath%>/app\", \"data_folder\": \"<%=@doc
 
 # docker run -d --restart=on-failure -v "<%=@shareFolder %>":/var/_sharedFolder -v "<%=@dockerCodePath%>/app":/var/_localApp -v "<%=@dockerDataPath%>":/var/_localAppData --name <%=@siteContainer %>  <%=@siteImage %> 
 
-echo  "<%=@shareFolder %>" >> <%=@shareFolder %>/mmm.txt
+echo  "<%=@shareFolder %>" >> /tmp/mmm.txt
 
 docker run -d --restart=on-failure -v "<%=@shareFolder %>":/var/_sharedFolder -v "<%=@dockerCodePath%>/app":/var/_localApp -v "<%=@dockerDataPath%>":/var/_localAppData --name <%=@siteContainer %>  <%=@siteImage %> 
