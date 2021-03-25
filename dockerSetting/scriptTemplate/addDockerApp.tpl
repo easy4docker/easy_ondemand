@@ -1,7 +1,5 @@
 # -- Add docker app ... <%=@serverName %> --
 
-echo  "AAA" >> /tmp/mmm.txt
-
 cd <%=@dockerSettingPath %>
 
 docker container stop <%=@siteContainer %>
