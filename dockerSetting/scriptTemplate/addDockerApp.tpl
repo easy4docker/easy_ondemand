@@ -15,9 +15,6 @@ mkdir -p <%=@shareFolder %>/output
 chmod 777 <%=@shareFolder %>/input
 chmod 777 <%=@shareFolder %>/output
 
-mv <%=@dockerDataPath%>/commCronData/* <%=@shareFolder %>/input/
-
-
 echo "{\n\t\"onDemandCallbackHost\": \"<%=@onDemandCallbackHost%>\",\n\t\"mainIP\": \"<%=@mainIP%>\",\n\t\"superPowerServer\": \"<%=@superPowerServer%>\"\n}" > <%=@shareFolder %>/input/_dockerSetting.json
 
 echo "{\"code_folder\": \"<%=@dockerCodePath%>/app\", \"data_folder\": \"<%=@dockerDataPath%>\"}" > <%=@dockerDataPath%>/_env.json
