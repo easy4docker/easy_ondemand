@@ -1,56 +1,29 @@
-/*
-const fs = require('fs');
-const request = require('request');
-request('http://www.google.com', function (error, response, body) {
-  console.error('error:', error); // Print the error if one occurred
-  console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-  console.log('body:', body); // Print the HTML for the Google homepage.
-});
-
-// '/var/_sharedFolder/input/inputData.data'
-const fn = '/var/_sharedFolder/input/inputData.data';
-// const fn = __dirname + '/data.data'
-*/
-
-/*
-try {
-  
-    const fs = require('fs');
-    fs.readFile(fn, 'utf-8', (err, data) => {
-      console.log('start');
-
-      try {
-        console.log('start 2');
-        const list = data.split(JSON.stringify('\n'));
-        console.log('start');
-        for (let i =0; i < list.length; i++) {
-          console.log(i + ':' + list[i]);
-        }
-        console.log('end');
-      } catch (e) {
-        console.log(e.message);
-      }
-      console.log('end2');
-    }); 
-  
-} catch (eRoot) {
-    console.log(eRoot.message);
-  }
-
-*/
-
-
 const process = require('process');
+const fs = require('fs');
+
+const inDataFn = '/var/_sharedFolder/input/input.Data';
+
 console.log('runing start -> ' + new Date());
 
-// setInterval(()=> {
-  console.log('.. ' + new Date());
-// }, 5000)
+const makeid = (length) => {
+  var result           = '';
+  var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  var charactersLength = characters.length;
+  for ( var i = 0; i < length; i++ ) {
+     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
 
 setTimeout(
   ()=> {
-    console.log('runing end -> ' + new Date());
-  //  process.exit()
+    fs.readFile(inDataFn, 'utf-8', (err, data) =>{
+      console.log(data + '-->' + new Date());
+      for (var i=0; i < 10; i++) {
+        console.log(makeid(32));
+      }
+      console.log('runing end -> ' + new Date());
+    })
+    
   }, 60000
 );
-
